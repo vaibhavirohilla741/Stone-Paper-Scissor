@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<body>
+<center>
+
+<h1>Rock Paper Scissor</h1>
+<div id="scoreboard">
+	<label id="lbcscore"> Computer Score</label>
+	<label id="lbuscore"> User Score</label>
+	<br>
+	<button id="cscore" ></button>
+	<button id="uscore" ></button>
+</div>
+<div id="Content">
+	<button class="button rock" onclick="myRock()"><span>Rock </span></button>
+	<button class="button paper"onclick="myPaper()"><span>Paper </span></button>
+	<button class="button Scissor" onclick="myScissor()"><span>Scissor </span></button>
+	<p id="userchoice">User Choice</p>
+	<p id="demo">Computer Choice</p>
+	<p id="result">Result </p>
+	
+</div>
+</center>
+</body>
+<style>
+	body,html
+	{
+		background-image: url("background.jpg");
+		height: 100%; 
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		color: white;
+	}
+	h1 
+	{ 
+		position: center;
+		font-size: 50px;
+
+	}
+	#Content
+	{
+		margin-top:200px;
+	}
+	
+	#scoreboard{
+		color: #FFFFFF;  		
+  		font-size: 28px;
+  		padding: 20px;  		
+		margin: 10px;
+		border:#FF0000;
+
+	}
+	#cscore, #uscore{
+		border-radius: 4px;  		
+  		border: none;
+  		color: #FFFFFF;
+  		background-color: #00ff00;
+  		font-size: 16px;
+  		padding: 10px;
+  		width: 50px;
+  		
+  		margin: 10px;
+
+
+
+	}
+	.rock {
+		background-color: #f4511e;
+		
+		} 
+	.paper {
+		background-color: #87CEFA;
+		} 
+	.Scissor {
+		background-color: #FFA500;
+		} 
+	
+	.button:hover span {
+ 		 padding-right: 25px;
+		}
+	
+
+
+	
+</style>
+<script>
+var user_choice;
+var flag=-1;
+var result;
+var user_score=0;
+var comp_score=0;
+
+function myRock() {
+  document.getElementById("userchoice").innerHTML = "Rock";
+	user_choice="Rock";
+	calculate();
+	
+}
+function myPaper() {
+  document.getElementById("userchoice").innerHTML = "Paper";
+	user_choice="Paper";
+	calculate();
+	
+}
+function myScissor() {
+  document.getElementById("userchoice").innerHTML = "Scissor";
+	user_choice="Scissor";
+	calculate();
+}
+function calculate()
+{
+	var num =Math.floor(Math.random() * 3);
+	var choice=["Rock","Paper","Scissor"];
+	var computer_choice= choice[num];
+	if(user_choice==computer_choice)
+	{
+          flag=0;
+	}
+	else if(user_choice == choice[0] && computer_choice == choice[2])
+	{
+          flag=1;
+	}
+	else if(user_choice == choice[1] && computer_choice == choice[0])
+	{
+          flag=1;
+	}
+	else if(user_choice == choice[2] && computer_choice == choice[1])
+	{
+          flag=1;
+	}
+	else{
+          flag=2;
+	}
+          
+	if(flag==1)
+	{    
+    		user_score+=1;
+    	result="You Win the game!!!";
+	}
+	else if(flag==0)
+	{
+         
+          result="draw match";
+	}
+	else{
+          	comp_score+=1;
+          result="You Lost!!!";
+	}
+ 	document.getElementById("demo").innerHTML="Computer Choice : "+computer_choice; 
+	document.getElementById("userchoice").innerHTML="User Choice : "+user_choice; 
+ 	document.getElementById("result").innerHTML=result; 
+	document.getElementById("uscore").innerHTML=user_score;
+	document.getElementById("cscore").innerHTML=comp_score;  
+}
+
+</script>
+
+
+</html>

@@ -1,0 +1,76 @@
+<html>
+</html>
+<head>
+
+<center><h1 style="color:red" ,style="font-size:300%";>ROCKING GAME</h1></center>
+<center><h2>ROCK PAPER SCISOR</h2></center>
+</head>
+<style>
+	body,html
+	{
+	background-image: url("background.jpg");
+	height: 100%; 
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+  
+	}
+	.button {
+  		border-radius: 4px;
+  		
+  		border: none;
+  		color: #FFFFFF;
+  		text-align: center;
+  		font-size: 28px;
+  		padding: 20px;
+  		width: 150px;
+  		transition: all 0.5s;
+  		cursor: pointer;
+  		margin: 4px 2px;
+		
+		}
+	
+		.button span {
+ 		 cursor: pointer;
+ 		 display: inline-block;
+  		position: relative;
+  		transition: 0.5s;
+		}
+
+		.button span:after {
+ 		 content: '\00bb';
+  		position: absolute;
+  		opacity: 0;
+  		top: 0;
+  		right: -20px;
+ 		 transition: 0.5s;
+		}
+
+		.button:hover span {
+ 		 padding-right: 25px;
+		}
+
+		.button:hover span:after {
+ 		 opacity: 1;
+  		right: 0;
+		}
+		.rock {background-color: #f4511e;
+		margin-left:550px;} /* Green */
+		.paper {background-color: #87CEFA;} /* Blue */
+		.scisor {background-color: #FFA500;} /* Green */
+
+	
+</style>
+<body>
+<center><h3>PLAY WITH COMPUTER</h3>
+<h3>CHOOSE YOUR OPTION</h2></center>
+<br>
+<center><img src="smallbackground.jpg"  width="400" height="150"></center>
+<br>
+<button class="button rock"><span>Rock </span></button>
+<button class="button paper"><span>Paper </span></button>
+<button class="button scisor"><span>Scisor </span></button>
+<script>
+	console.log("javascript");
+</script>
+</body>
